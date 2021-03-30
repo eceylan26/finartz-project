@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "ecb81e86-7716-4d28-92e5-7f641e7652d5",
+		"name": "Ticket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getTicketById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ticket/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTickets",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"creditCard\": \"3782820000000500\",\r\n    \"flight\": {\r\n        \"id\": 1,\r\n        \"date\": \"2021-03-28\",\r\n        \"quota\": 100,\r\n        \"price\": 200.0,\r\n        \"route\": {\r\n            \"id\": 1,\r\n            \"takeOff\": {\r\n                \"id\": 2,\r\n                \"name\": \"Eskişehir Hava Jet Üssü\"\r\n            },\r\n            \"landing\": {\r\n                \"id\": 1,\r\n                \"name\": \"Ataturk Havalimanı\"\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sellTicket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"creditCard\": \"378282999999511\",\r\n    \"ticketStatus\": \"ACTIVE\",\r\n    \"flight\": {\r\n        \"id\": 1,\r\n        \"date\": \"2021-03-29\",\r\n        \"quota\": 100,\r\n        \"price\": 200.0,\r\n        \"route\": {\r\n            \"id\": 1,\r\n            \"takeOff\": {\r\n                \"id\": 2,\r\n                \"name\": \"Eskişehir Hava Jet Üssü\"\r\n            },\r\n            \"landing\": {\r\n                \"id\": 1,\r\n                \"name\": \"İzmir Adnan Menderes Havalimanııı\"\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ticket/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelTicket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ticket/id/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						"id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
